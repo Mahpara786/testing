@@ -1,16 +1,19 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
-import Button from "./components/Button/Button";
+import Todo from './components/todo'
 
 function App() {
+  const todos = [
+    {id:1, title: "bring grocery" ,  status:false},
+    {id:2, title :"Wash Dishes", status : true},
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        Learining to test apps
-        <Button />
-      </header>
-    </div>
+     { todos.map((todo) => {
+       return (<Todo todo ={todo}/>)
+     })}
+     </div>
   );
-}
+  }
 
 export default App;
